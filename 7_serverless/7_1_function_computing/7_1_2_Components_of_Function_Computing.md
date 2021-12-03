@@ -1,4 +1,10 @@
 ---
+title:
+author: 张果
+coauthors:
+  - 
+reviewers:
+  - 
 goals: 
   intro: 理解函数计算的基本单元——事件函数和触发器。
 outlines:

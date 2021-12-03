@@ -1,7 +1,10 @@
 ---
 title: 标准项目转换成函数计算项目
 author: 
-coauthor: 
+coauthors:
+  - 
+reviews: 
+  - 
 created_date: 
 updated_date: 
 goals: 
