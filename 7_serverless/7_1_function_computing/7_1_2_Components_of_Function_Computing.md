@@ -37,7 +37,7 @@ def main(event, context):
 
 API网关触发器配置方法如下图所示
 
-![](7_1_2_image/Untitled.jpg '')
+![API网关触发器配置]('./7_1_2_image/Untitled.png')
 
 上图红线部分就是触发器调用事件函数的入口，格式为“{代码文件名}.{事件函数名}”。图中的事件函数为main_handler函数，执行入口是index.py, 因此它的执行方法是“index.main_handler”。
 而以代码块1为例，它的执行方法应该配置成“index.main”。
