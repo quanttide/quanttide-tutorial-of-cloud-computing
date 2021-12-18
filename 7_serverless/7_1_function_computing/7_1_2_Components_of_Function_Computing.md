@@ -1,33 +1,42 @@
 # 函数计算
+
 ## 概述
-***
+___
 本讲的教学目标为：
 1. 了解什么是事件函数和触发器；
-   1. 了解触发器和事件函数之间的关系。
-##一、事件函数
-***
-       def get_first_element(value: list):
-               return value[0]
-    
-       def main(event, context):
-               a = event["key1"]
-               if a.type() = list:
-                   b = get_first_element(a)
-                   print(a, b)
+2. 了解触发器和事件函数之间的关系。
+
+## 一、事件函数
+___
+~~~
+def get_first_element(value: list):
+       return value[0]
+def main(event, context):
+       a = event["key1"]
+       if a.type() = list:
+           b = get_first_element(a)
+           print(a, b)
+~~~                   
 [^代码块1]:index.py, 事件函数的简单例子 
 
 上面这段代码就是事件函数的一个简单例子。
+
 事件函数跟普通的函数很相似，但是有以下几个重要的不同点：
 1. 入参必须是event和context, 区分先后
 2. event是一个字典类型的参数，储存要被处理的数据。
 3. 一般情况下，主函数会被改造成事件函数，这在第一讲中已经提到如何改造。在代码块1 的例子中，main函数既是主函数又是事件函数。
 以上都是针对于事件函数本身而言的特征。
+
 对于外部调用，事件函数有一个执行入口，一般是指主代码文件。在上面的例子中，执行入口便是index.py。
-##二、触发器
-***
+
+## 二、触发器
+___
 触发器可以理解成调用事件函数并往里输入参数的动作设置，如果事件函数有返回值，那么触发器也会接收到返回值。一个事件函数可以对应多个触发器。目前最常用的触发器是HTTP服务API，需要使用API网关触发器实现。
+
 API网关触发器配置方法如下图所示
+
 ![图片Alt](/assets/pics/Untitled.png '执行入口')
+
 上图红线部分就是触发器调用事件函数的入口，格式为“{代码文件名}.{事件函数名}”。图中的事件函数为main_handler函数，执行入口是index.py, 因此它的执行方法是“index.main_handler”。
 而以代码块1为例，它的执行方法应该配置成“index.main”。
 
