@@ -8,17 +8,16 @@
 
 一、事件函数
 ----------
-~~~
+```Python
+# 代码块1： index.py 事件函数的简单例子
 def get_first_element(value: list):
        return value[0]
 def main(event, context):
        a = event["key1"]
-       if a.type() = list:
+       if a.isinstance(list):
            b = get_first_element(a)
            print(a, b)
-~~~                   
-
-[^代码块1]:index.py, 事件函数的简单例子 
+```                   
 
 上面这段代码就是事件函数的一个简单例子。
 
