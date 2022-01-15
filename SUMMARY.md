@@ -34,9 +34,9 @@
 
 <!-- 第四部分：Serverless -->
 
-- [第九章 函数计算](07_function_computing/README.md)
-  - [第一节 函数计算入门](07_function_computing/1_intro_to_function_computing/README.md)
-    - [9.1.1](07_function_computing/1_intro_to_function_computing/1_migrate_to_function_computing.md)
-    - [9.1.2](07_function_computing/1_intro_to_function_computing/2_components_of_function_computing.md)
-    - [9.1.3](07_function_computing/1_intro_to_function_computing/3_requriements_for_function_computing_programs.md)
-    - [9.1.4](07_function_computing/1_intro_to_function_computing/4_using_other_cloud_computing_services.md)
+- [第九章 函数计算](09_function_computing/README.md)
+  - [第一节 函数计算入门](09_function_computing/1_intro_to_function_computing/README.md)
+    - [9.1.1](09_function_computing/1_intro_to_function_computing/1_migrate_to_function_computing.md)
+    - [9.1.2](09_function_computing/1_intro_to_function_computing/2_components_of_function_computing.md)
+    - [9.1.3](09_function_computing/1_intro_to_function_computing/3_requriements_for_function_computing_programs.md)
+    - [9.1.4](09_function_computing/1_intro_to_function_computing/4_using_other_cloud_computing_services.md)
