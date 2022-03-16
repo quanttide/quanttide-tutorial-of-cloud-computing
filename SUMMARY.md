@@ -40,3 +40,7 @@
     - [9.1.2](09_function_computing/1_intro_to_function_computing/2_components_of_function_computing.md)
     - [9.1.3](09_function_computing/1_intro_to_function_computing/3_requriements_for_function_computing_programs.md)
     - [9.1.4](09_function_computing/1_intro_to_function_computing/4_using_other_cloud_computing_services.md)
+
+<!-- 第五部分：中间件 -->
+
+- [第十一章 消息队列](11_message_queue/README.md)
