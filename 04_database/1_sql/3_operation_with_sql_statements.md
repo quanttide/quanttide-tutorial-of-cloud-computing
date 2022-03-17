@@ -50,9 +50,9 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pymysql
 
 附上源码：
 ```sql
-create table if not exists `classes`(
-    `class_id` varchar(50) primary key ,
-    `class_num` varchar(10),
+create table if not exists `courses`(
+    `course_id` varchar(50) primary key ,
+    `course_num` varchar(10),
     `student_quantity` tinyint check ( student_quantity >= 0),
     `teacher_in_charge` varchar(10) not null
 );
@@ -60,14 +60,14 @@ create table if not exists `classes`(
 create table if not exists `students`(
     `student_id` varchar(50) primary key,
     `name` varchar(10) not null ,
-    `class_id` varchar(50),
+    `course_id` varchar(50),
     `gender` varchar(2) default 'M',
     `age` tinyint check ( `age` >= 18 ),
-    `class_num` varchar(10),
-    foreign key (class_id) references classes(class_id)
+    `course_num` varchar(10),
+    foreign key (course_id) references courses(course_id)
 );
 
-insert into classes (class_id, class_num, student_quantity, teacher_in_charge)
+insert into courses (course_id, course_num, student_quantity, teacher_in_charge)
             values
             ('7a287948-6522-477c-a9b4-3cac38cabdf2','201',30,'李老师'),
             ('f41314c7-5cc8-4561-8c22-1b9c03070160','202',28,'王老师'),
@@ -75,10 +75,10 @@ insert into classes (class_id, class_num, student_quantity, teacher_in_charge)
             ('c5594c91-f853-46e4-94a3-35946f13566d','204',29,'程老师')
 ```
 
-然后继续插入一些数据（第二讲中的classes表），成功插入后，我们查询一下现在classes表中的数据。
+然后继续插入一些数据（第二讲中的courses表），成功插入后，我们查询一下现在courses表中的数据。
 
 ```sql
-select * from classes;
+select * from courses;
 ```
 
 这是在pycharm的service中我们就可以看到输出的结果：
@@ -107,7 +107,7 @@ if __name__ == '__main__':
 ```python
 with connection:
     with connection.cursor() as cursor:
-        sql = 'insert into students(student_id, name, class_id, gender, age, class_num) VALUES  ("b0288ff3-c82b-44a0-8445-f94a7c71d12d", "小明", "7a287948-6522-477c-a9b4-3cac38cabdf2", "M", 20, "201");'
+        sql = 'insert into students(student_id, name, course_id, gender, age, course_num) VALUES  ("b0288ff3-c82b-44a0-8445-f94a7c71d12d", "小明", "7a287948-6522-477c-a9b4-3cac38cabdf2", "M", 20, "201");'
         try:
             cursor.execute(sql)
             connection.commit()
@@ -125,7 +125,7 @@ connection.close()
 #### 用sql语句进行查找
 ```python
 with connection.cursor() as cursor:
-     sql = 'select * from classes'
+     sql = 'select * from courses'
      cursor.execute(sql)
      results = cursor.fetchall()
      print(results)
@@ -149,7 +149,7 @@ if __name__ == '__main__':
                                  database='test')
     with connection:
         with connection.cursor() as cursor:
-            sql = 'insert into students(student_id, name, class_id, gender, age, class_num) VALUES  ("b0288ff3-c82b-44a0-8445-f94a7c71d12d", "小明", "7a287948-6522-477c-a9b4-3cac38cabdf2", "M", 20, "201");'
+            sql = 'insert into students(student_id, name, course_id, gender, age, course_num) VALUES  ("b0288ff3-c82b-44a0-8445-f94a7c71d12d", "小明", "7a287948-6522-477c-a9b4-3cac38cabdf2", "M", 20, "201");'
             try:
                 cursor.execute(sql)
                 connection.commit()
@@ -157,7 +157,7 @@ if __name__ == '__main__':
                 connection.rollback()
 
         with connection.cursor() as cursor:
-            sql = 'select * from classes'
+            sql = 'select * from courses'
             cursor.execute(sql)
             results = cursor.fetchall()
             print(results)

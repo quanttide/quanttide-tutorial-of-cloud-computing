@@ -36,7 +36,7 @@
 如果以后想要批量操作的话会比较困难。而使用GUID类型则不会出现这种状况。
 
 ### 外键
-class_id|班级号   |班级人数|班主任|
+course_id|班级号   |班级人数|班主任|
 |---|---|---|---|
 |7a287948-6522-477c-a9b4-3cac38cabdf2|	201|30|	李老师|
 |f41314c7-5cc8-4561-8c22-1b9c03070160|	202|28|	王老师|
@@ -46,23 +46,23 @@ class_id|班级号   |班级人数|班主任|
 现在我们引入一张新表，学生表和班级表分别记录了有关每个学生的个人信息和每个班级的详细情况。
 但是我们如果想要查小明的班主任是谁，应该怎么办呢？接下来我们引入外键的概念。
 
-由于一个班级可以有多个学生，在关系模型中，这两个表的关系可以称为“一对多”，即一个**classes**的记录可以对应多个**students**表的记录。
-为了表达这种一对多的关系，我们需要在**students**表中加入一列class_id，让它的值与classes表的某条记录相对应：
+由于一个班级可以有多个学生，在关系模型中，这两个表的关系可以称为“一对多”，即一个**courses**的记录可以对应多个**students**表的记录。
+为了表达这种一对多的关系，我们需要在**students**表中加入一列course_id，让它的值与courses表的某条记录相对应：
 
-|students_id|姓名 |class_id|性别 |年龄|班级号|
+|students_id|姓名 |course_id|性别 |年龄|班级号|
 |---|---|---|---|---|---|
 |b0288ff3-c82b-44a0-8445-f94a7c71d12d|	小明|7a287948-6522-477c-a9b4-3cac38cabdf2|	M|	20|201|
 |b2e56f7e-224a-4703-aab9-fce3bb225714|	小红|7639efc7-ffe8-4d7d-895c-1afa6965b001|	F|	21|203|
 |0bf3aef3-e3b1-46f7-9f08-9a305cb69c7c|	小军|f41314c7-5cc8-4561-8c22-1b9c03070160|	M|	23|202|
 |0dc861e9-dfb0-4d14-97d1-0d1fa9aa598f|	小白|7639efc7-ffe8-4d7d-895c-1afa6965b001|	F|	20|203|
 
-这样，我们就可以根据class_id这个列直接定位出一个students表的记录应该对应到classes的哪条记录。
+这样，我们就可以根据course_id这个列直接定位出一个students表的记录应该对应到courses的哪条记录。
 
 例如：
-- 小明的class_id为7a287948-6522-477c-a9b4-3cac38cabdf2，因此对应的**classes**表的记录是id=7a287948-6522-477c-a9b4-3cac38cabdf2的201班，
+- 小明的course_id为7a287948-6522-477c-a9b4-3cac38cabdf2，因此对应的**courses**表的记录是id=7a287948-6522-477c-a9b4-3cac38cabdf2的201班，
 班主任为李老师。
 
-在students表中，通过class_id的字段，可以把数据与另一张表关联起来，这种列称为**外键**。
+在students表中，通过course_id的字段，可以把数据与另一张表关联起来，这种列称为**外键**。
 
 ## 数据库基本操作（MySQL）
 数据库基本操作是通过sql(structure query language)语句进行的，下面我们介绍如何用sql语句进行操作数据库。
@@ -99,26 +99,26 @@ CREATE TABLE table_name (column_name column_type);
 - check check约束
 
 #### 实操案例
-要求：建立前文中提到的**students**表和**classes**表。
+要求：建立前文中提到的**students**表和**courses**表。
 
 学生表：
 - student_id：主键
 - name：非空
-- class_id：外键，指向**classes**表
+- course_id：外键，指向**courses**表
 - gender：默认男
 - age：确保输入的都在18岁以上
-- class_num
+- course_num
 
 班级表：
-- class_id：主键
-- class_num
+- course_id：主键
+- course_num
 - student_quantity：确保输入的都在不小于0
 - teacher_in_charge：非空
 
 ```sql
-create table if not exists `classes`(
-    `class_id` varchar(50) primary key ,
-    `class_num` varchar(10),
+create table if not exists `courses`(
+    `course_id` varchar(50) primary key ,
+    `course_num` varchar(10),
     `student_quantity` tinyint check ( student_quantity >= 0),
     `teacher_in_charge` varchar(10) not null
 );
@@ -126,11 +126,11 @@ create table if not exists `classes`(
 create table if not exists `students`(
     `student_id` varchar(50) primary key,
     `name` varchar(10) not null ,
-    `class_id` varchar(50),
+    `course_id` varchar(50),
     `gender` varchar(2) default 'M',
     `age` tinyint check ( `age` >= 18 ),
-    `class_num` varchar(10),
-    foreign key (class_id) references classes(class_id)
+    `course_num` varchar(10),
+    foreign key (course_id) references courses(course_id)
 );
 ```
 
@@ -141,23 +141,23 @@ INSERT INTO table_name ( field1, field2,...fieldN )
                        VALUES
                        ( value1, value2,...valueN );
 ```
-class_id|班级号   |班级人数|班主任|
+course_id|班级号   |班级人数|班主任|
 |---|---|---|---|
 |7a287948-6522-477c-a9b4-3cac38cabdf2|	201|30|	李老师|
 |f41314c7-5cc8-4561-8c22-1b9c03070160|	202|28|	王老师|
 |7639efc7-ffe8-4d7d-895c-1afa6965b001|	203|31|	孙老师|
 |c5594c91-f853-46e4-94a3-35946f13566d|	204|29|	程老师|
 
-下面我们依次插入classes的四条数据：
+下面我们依次插入courses的四条数据：
 ```sql
-create table if not exists `classes`(
-    `class_id` varchar(50) primary key ,
-    `class_num` varchar(10),
+create table if not exists `courses`(
+    `course_id` varchar(50) primary key ,
+    `course_num` varchar(10),
     `student_quantity` tinyint check ( student_quantity >= 0),
     `teacher_in_charge` varchar(10) not null 
 );
 
-insert into classes (class_id, class_num, student_quantity, teacher_in_charge)
+insert into courses (course_id, course_num, student_quantity, teacher_in_charge)
             values 
             ('7a287948-6522-477c-a9b4-3cac38cabdf2','201',30,'李老师'),
             ('f41314c7-5cc8-4561-8c22-1b9c03070160','202',28,'王老师'),
@@ -168,7 +168,7 @@ insert into classes (class_id, class_num, student_quantity, teacher_in_charge)
 ### 查找数据
 我们可以准备如下数据，方便我们进行查找。
 
-| **id** | **class_id** | **name** | **gender** | **score** |
+| **id** | **course_id** | **name** | **gender** | **score** |
 |:------:|:------------:|:--------:|:----------:|:----------:|
 | 1      | 1            | 小明       | M          | 90         |
 | 2      | 1            | 小红       | F          | 95         |
@@ -199,7 +199,7 @@ select name, gender, age from students; # 选取students表中name列，性别�
 SELECT * FROM students WHERE score >= 80; # 选择students表中分数在80以上的同学
 SELECT * FROM students WHERE score >= 80 AND gender = 'M'; # 选择students表中分数在80以上的男性同学
 SELECT * FROM students WHERE score >= 80 OR gender = 'M'; # 选择students表中分数在80以上或者男性同学（两个条件满足任意一个即可）
-SELECT * FROM students WHERE NOT class_id = 2; # 选择students表中class_id不为2的同学
+SELECT * FROM students WHERE NOT course_id = 2; # 选择students表中course_id不为2的同学
 SELECT * FROM students WHERE (score < 80 OR score > 90) AND gender = 'M'; # 可以使用and，or和not嵌套查询
 ```
 
@@ -215,30 +215,30 @@ SELECT id, name, gender, score FROM students ORDER BY score DESC, gender; # 表�
 ```sql
 SELECT id, name, gender, score
 FROM students
-WHERE class_id = 1
+WHERE course_id = 1
 ORDER BY score DESC;
 ```
 
 #### 连接查询
 例如，我们想要选出students表的所有学生信息，可以用一条简单的SELECT语句完成：
 ```sql
-select s.id, s.name, s.class_id, s.gender, s.score from students s;
+select s.id, s.name, s.course_id, s.gender, s.score from students s;
 ```
-但是，假设我们希望结果集同时包含所在班级的名称，上面的结果集只有class_id列，缺少对应班级的name列。
+但是，假设我们希望结果集同时包含所在班级的名称，上面的结果集只有course_id列，缺少对应班级的name列。
 
-现在问题来了，存放班级名称的name列存储在classes表中，只有根据students表的class_id，找到classes表对应的行，再取出name列，就可以获得班级名称。
+现在问题来了，存放班级名称的name列存储在courses表中，只有根据students表的course_id，找到courses表对应的行，再取出name列，就可以获得班级名称。
 ```sql
-SELECT s.id, s.name, s.class_id, c.name class_name, s.gender, s.score
+SELECT s.id, s.name, s.course_id, c.name course_name, s.gender, s.score
 FROM students s
-INNER JOIN classes c
-ON s.class_id = c.id;
+INNER JOIN courses c
+ON s.course_id = c.id;
 ```
 
 注意INNER JOIN查询的写法是：
 
 - 先确定主表，仍然使用FROM <表1>的语法；
 - 再确定需要连接的表，使用INNER JOIN <表2>的语法；
-- 然后确定连接条件，使用ON <条件...>，这里的条件是s.class_id = c.id，表示students表的class_id列与classes表的id列相同的行需要连接；
+- 然后确定连接条件，使用ON <条件...>，这里的条件是s.course_id = c.id，表示students表的course_id列与courses表的id列相同的行需要连接；
 - 可选：加上WHERE子句、ORDER BY等子句。
 
 除了inner join外，还有left join，right join和outer join，区别如下：

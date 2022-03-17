@@ -77,10 +77,10 @@ Base = declarative_base()
 ```python
 from sqlalchemy import Column, String, Integer, CheckConstraint, ForeignKey
 
-class Class(Base):
-    __tablename__ = 'classes'
-    class_id = Column(String(50), primary_key=True)
-    class_num = Column(String(10), nullable=False)
+class Course(Base):
+    __tablename__ = 'courses'
+    course_id = Column(String(50), primary_key=True)
+    course_num = Column(String(10), nullable=False)
     student_quantity = Column(Integer, nullable=False)
     teacher_in_charge = Column(String(10), nullable=False)
 
@@ -93,7 +93,7 @@ class Student(Base):
     __tablename__ = 'students'
     student_id = Column(String(50), primary_key=True)
     name = Column(String(10), nullable=False)
-    class_id = Column(String(50), ForeignKey('class.class_id'))
+    course_id = Column(String(50), ForeignKey('courses.course_id'))
     gender = Column(String(2), default='M')
     age = Column(Integer, nullable=False)
 
@@ -113,10 +113,10 @@ engine = create_engine('mysql+pymysql://test:j78>=mVOPJJQo_c$@cdb-oasqez4f.gz.te
 Base = declarative_base()
 
 
-class Class(Base):
-    __tablename__ = 'classes'
-    class_id = Column(String(50), primary_key=True)
-    class_num = Column(String(10), nullable=False)
+class Course(Base):
+    __tablename__ = 'courses'
+    course_id = Column(String(50), primary_key=True)
+    course_num = Column(String(10), nullable=False)
     student_quantity = Column(Integer, nullable=False)
     teacher_in_charge = Column(String(10), nullable=False)
 
@@ -129,7 +129,7 @@ class Student(Base):
     __tablename__ = 'students'
     student_id = Column(String(50), primary_key=True)
     name = Column(String(10), nullable=False)
-    class_id = Column(String(50), ForeignKey('class.class_id'))
+    course_id = Column(String(50), ForeignKey('courses.course_id'))
     gender = Column(String(2), default='M')
     age = Column(Integer, nullable=False)
 
@@ -164,36 +164,36 @@ session的常见操作方法包括：
 ```python
 import uuid
 
-session.add(Class(class_id=str(uuid.uuid4()), class_num='205', student_quantity=40, teacher_in_charge='邹老师'))
-session.add(Class(class_id=str(uuid.uuid4()), class_num='206', student_quantity=38, teacher_in_charge='苏老师'))
-session.add(Class(class_id=str(uuid.uuid4()), class_num='207', student_quantity=41, teacher_in_charge='林老师'))
-session.add(Class(class_id=str(uuid.uuid4()), class_num='208', student_quantity=39, teacher_in_charge='赵老师'))
+session.add(Course(course_id=str(uuid.uuid4()), course_num='205', student_quantity=40, teacher_in_charge='邹老师'))
+session.add(Course(course_id=str(uuid.uuid4()), course_num='206', student_quantity=38, teacher_in_charge='苏老师'))
+session.add(Course(course_id=str(uuid.uuid4()), course_num='207', student_quantity=41, teacher_in_charge='林老师'))
+session.add(Course(course_id=str(uuid.uuid4()), course_num='208', student_quantity=39, teacher_in_charge='赵老师'))
 session.commit()
 ```
 
 ### 删
 删有如下两种办法，当批量删除时使用第二种方法：
 ```python
-delete_users = session.query(Class).filter(Class.class_num == "207").first()
+delete_users = session.query(Course).filter(Course.course_num == "207").first()
 if delete_users:
     session.delete(delete_users)
     session.commit()
 ```
 ```python
-session.query(Class).filter(Class.class_num == "207").delete()
+session.query(Course).filter(Course.course_num == "207").delete()
 session.commit()
 ```
 
 ### 改
 更新数据有两种方法，一种是使用query中的update方法：
 ```python
-session.query(Class).filter(Class.class_num == "207").update({'teacher_in_charge': "王老师"})
+session.query(Course).filter(Course.course_num == "207").update({'teacher_in_charge': "王老师"})
 ```
 另外一种是操作对应的表模型：
 ```python
-classes = session.query(Class).filter(Class.class_num == "207").first()
-classes.teacher_in_charge = "王老师"
-session.add(classes)
+courses = session.query(Course).filter(Course.course_num == "207").first()
+courses.teacher_in_charge = "王老师"
+session.add(courses)
 session.commit()
 ```
 
@@ -201,7 +201,32 @@ session.commit()
 通常我们通过以下查询模式获取数据，需要注意的是，通过session.query()我们查询返回了一个Query对象，
 此时还没有去具体的数据库中查询，只有当执行具体的.all()，.first()等函数时才会真的去操作数据库。
 ```python
-classes = session.query(Class).all()
-for c in classes:
-    print(c.class_num)
+courses = session.query(Course).all()
+for c in courses:
+    print(c.course_num)
 ```
+
+## 利用已有数据库生成数据模型
+现有项目或者别人的代码里如果已经用其他的方式写好了表定义，不想再定义Model了，想用SQLAlchemy直接使用对应的数据库表。
+文档地址：https://docs.sqlalchemy.org/en/14/orm/extensions/automap.html
+
+```python
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
+import uuid
+
+Base = automap_base()
+engine = create_engine('mysql+pymysql://test:j78>=mVOPJJQo_c$@cdb-oasqez4f.gz.tencentcdb.com:10139/test?charset=utf8')
+Base.prepare(engine, reflect=True)
+
+Course = Base.courses.course
+
+session = Session(engine)
+session.add(Course(course_id=str(uuid.uuid4()),course_num='210', student_quantity=45, teacher_in_charge='李老师'))
+session.commit()
+```
+
+如以上代码所示，我们首先新建了一个automap元类，prepare方法会调用metadata.reflect()方法，
+然后所有在metadata里面的表会被自动创建成对应的类。如ForeignKeyConstraint对象则会创建成不同类之间的relationship对象。
+之后我们遍可以通过操纵类来操纵表。
