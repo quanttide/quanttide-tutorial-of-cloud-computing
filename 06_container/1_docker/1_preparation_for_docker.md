@@ -75,7 +75,15 @@ docker run hello-world
 
 如果出现以上内容则代表安装成功！！
 
+## pycharm连接docker
+新建一个文件夹，用pycharm打开。File->Settings->Build,Execution,Deployment->Docker。
+由于我们已经安装了docker desktop for windows，因此我们直接在对应复选框勾选，不需要另外配置了。
 
+![img.png](1_preparetion_for_docker/7_pycharm_configuration.png)
+
+如上图所示，出现Connection Successful则代表连接成功。点击OK后即可连接。
+
+连接后在下方会弹出来service工具，我们可以看到服务器（Docker），镜像（image），容器（container）等。
 
 ## 常见安装问题
 ### 安装Hyper-v
