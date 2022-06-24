@@ -1,0 +1,11 @@
+# QtClass Config
+title: 云计算教程
+author: 量潮科技
+description: 以Python语言和腾讯云为例的云计算教程
+level: intermediate
+stage: dev
+tags:
+  - python
+  - cloud_computing
+# Jupyter Book Config
+only_build_toc_files: true

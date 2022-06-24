@@ -1,0 +1,31 @@
+format: jb-book
+root: README.md
+parts: 
+  - caption: 快速入门
+    chapters:
+      - file: 01_intro/README.md
+        sections:
+          - file: 01_intro/1_intro_to_cloud_computing/README.md
+            sections: 
+              - file: 01_intro/1_intro_to_cloud_computing/categories.md
+          - file: 01_intro/2_using_cloud_services/README.md
+            sections: 
+              - file: 01_intro/2_using_cloud_services/1_using_cloud_services_with_console.md
+              - file: 01_intro/2_using_cloud_services/2_using_cloud_services_with_api.md
+              - file: 01_intro/2_using_cloud_services/3_using_cloud_services_with_sdk.md
+  - caption: 基础
+    chapters: 
+      - file: 02_virtual_machine/README.md
+  - caption: 云原生
+    chapters: 
+      - file: 06_container/README.md
+  - caption: Serverless 
+    chapters:
+      - file: 09_function_computing/README.md    
+        sections: 
+          - file: 09_function_computing/1_intro_to_function_computing/README.md
+            sections: 
+              - file: 09_function_computing/1_intro_to_function_computing/1_migrate_to_function_computing.md
+              - file: 09_function_computing/1_intro_to_function_computing/2_components_of_function_computing.md
+              - file: 09_function_computing/1_intro_to_function_computing/3_requriements_for_function_computing_programs.md
+              - file: 09_function_computing/1_intro_to_function_computing/4_using_other_cloud_computing_services.md
