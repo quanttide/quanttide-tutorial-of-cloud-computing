@@ -41,8 +41,6 @@ parts:
       - file: 05_storage/README.md
         sections:
           - file: 05_storage/1_object_storage/README.md
-            sections:
-              - file: 05_storage/1_object_storage/website_hosting.md
           - file: 05_storage/2_file_storage/README.md
   - caption: 云原生
     chapters: 
@@ -58,6 +56,8 @@ parts:
         sections:
           - file: 07_application_hosting/1_app_engine/README.md
           - file: 07_application_hosting/2_website_hosting/README.md
+            sections:
+              - file: 07_application_hosting/2_website_hosting/website_hosting_with_cos.md
       - file: 08_microservice_engine/README.md
         sections:
           - file: 08_microservice_engine/quick_start.md
