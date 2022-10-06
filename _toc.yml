@@ -16,9 +16,53 @@ parts:
   - caption: 基础
     chapters: 
       - file: 02_virtual_machine/README.md
+      - file: 03_network/README.md
+        sections:
+          - file: 03_network/1_domain_name/README.md
+            sections:
+              - file: 03_network/1_domain_name/1_domain_name_registry_and_recording.md
+              - file: 03_network/1_domain_name/2_domain_name_resolution.md
+              - file: 03_network/1_domain_name/3_ssl_certificate.md
+          - file: 03_network/2_vpc/README.md
+          - file: 03_network/3_cdn/README.md
+      - file: 04_database/README.md
+        sections:
+          - file: 04_database/1_sql/README.md
+            sections:
+              - file: 04_database/1_sql/1_connect_to_sql_database.md
+              - file: 04_database/1_sql/2_basic_concept.md
+              - file: 04_database/1_sql/3_operation_with_sql_statements.md
+              - file: 04_database/1_sql/4_operation_with_ORM.md
+          - file: 04_database/2_nosql/README.md
+            sections:
+              - file: 04_database/2_nosql/1_mongodb.md
+              - file: 04_database/2_nosql/2_redis.md
+          - file: 04_database/3_message_queue/README.md
+      - file: 05_storage/README.md
+        sections:
+          - file: 05_storage/1_object_storage/README.md
+            sections:
+              - file: 05_storage/1_object_storage/website_hosting.md
+          - file: 05_storage/2_file_storage/README.md
   - caption: 云原生
     chapters: 
       - file: 06_container/README.md
+        sections:
+          - file: 06_container/1_docker/README.md
+            sections:
+              - file: 06_container/1_docker/1_preparation_for_docker.md
+              - file: 06_container/1_docker/2_basic_operation_of_docker.md
+              - file: 06_container/1_docker/3_build_images_using_dockerfile.md
+          - file: 06_container/2_kuternetes/README.md
+      - file: 07_application_hosting/README.md
+        sections:
+          - file: 07_application_hosting/1_app_engine/README.md
+          - file: 07_application_hosting/2_website_hosting/README.md
+      - file: 08_microservice_engine/README.md
+        sections:
+          - file: 08_microservice_engine/quick_start.md
+          - file: 08_microservice_engine/1_naming_service/README.md
+          - file: 08_microservice_engine/2_configuration_service/README.md
   - caption: Serverless 
     chapters:
       - file: 09_function_computing/README.md    
@@ -29,3 +73,21 @@ parts:
               - file: 09_function_computing/1_intro_to_function_computing/2_components_of_function_computing.md
               - file: 09_function_computing/1_intro_to_function_computing/3_requriements_for_function_computing_programs.md
               - file: 09_function_computing/1_intro_to_function_computing/4_using_other_cloud_computing_services.md
+      - file: 10_serverless/README.md
+        sections:
+          - file: 10_serverless/event_bus/README.md
+            sections:
+              - file: 10_serverless/event_bus/1_intro_to_event_bus.md
+          - file: 10_serverless/serverless_framework/README.md
+          - file: 10_serverless/workflow/README.md
+          - file: 10_serverless/advanced/README.md
+            sections:
+              - file: 10_serverless/advanced/event_driven.md
+              - file: 10_serverless/advanced/serverless_applications.md
+  - caption: 音视频
+    chapters:
+      - file: video/README.md
+        sections:
+          - file: video/1_video_on_demand/README.md
+            sections:
+              - file: video/1_video_on_demand/1_intro_to_video_on_demand.md

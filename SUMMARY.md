@@ -1,13 +1,5 @@
 # 目录
 
-<!-- 第一部分：绪论 -->
-
-- [第一章 简介](01_intro/README.md)
-  - [使用云服务](01_intro/using_cloud_services/README.md)
-    - [1.2.1 使用控制台操作云服务](01_intro/using_cloud_services/1_using_cloud_services_with_console.md)
-    - [1.2.2 使用API操作云服务](01_intro/using_cloud_services/2_using_cloud_services_with_api.md)
-    - [1.2.3 使用SDK操作云服务](01_intro/using_cloud_services/3_using_cloud_services_with_sdk.md)
-
 <!-- 第二部分：基础 -->
 
 - [第二章 虚拟机](02_virtual_machine/README.md)
