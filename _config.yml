@@ -5,6 +5,7 @@ author: 量潮科技
 description: 以Python语言和腾讯云为例的云计算教程
 level: intermediate
 stage: dev
+category: tutorial
 tags:
   - python
   - cloud_computing
