@@ -58,32 +58,27 @@ parts:
           - file: 07_application_hosting/2_website_hosting/README.md
             sections:
               - file: 07_application_hosting/2_website_hosting/website_hosting_with_cos.md
-      - file: 08_microservice_engine/README.md
-        sections:
-          - file: 08_microservice_engine/quick_start.md
-          - file: 08_microservice_engine/1_naming_service/README.md
-          - file: 08_microservice_engine/2_configuration_service/README.md
   - caption: Serverless 
     chapters:
-      - file: 09_function_computing/README.md    
+      - file: 08_function_computing/README.md    
         sections: 
-          - file: 09_function_computing/1_intro_to_function_computing/README.md
+          - file: 08_function_computing/1_intro_to_function_computing/README.md
             sections: 
-              - file: 09_function_computing/1_intro_to_function_computing/1_migrate_to_function_computing.md
-              - file: 09_function_computing/1_intro_to_function_computing/2_components_of_function_computing.md
-              - file: 09_function_computing/1_intro_to_function_computing/3_requriements_for_function_computing_programs.md
-              - file: 09_function_computing/1_intro_to_function_computing/4_using_other_cloud_computing_services.md
-      - file: 10_serverless/README.md
+              - file: 08_function_computing/1_intro_to_function_computing/1_migrate_to_function_computing.md
+              - file: 08_function_computing/1_intro_to_function_computing/2_components_of_function_computing.md
+              - file: 08_function_computing/1_intro_to_function_computing/3_requriements_for_function_computing_programs.md
+              - file: 08_function_computing/1_intro_to_function_computing/4_using_other_cloud_computing_services.md
+      - file: 09_serverless/README.md
         sections:
-          - file: 10_serverless/event_bus/README.md
+          - file: 09_serverless/event_bus/README.md
             sections:
-              - file: 10_serverless/event_bus/1_intro_to_event_bus.md
-          - file: 10_serverless/serverless_framework/README.md
-          - file: 10_serverless/workflow/README.md
-          - file: 10_serverless/advanced/README.md
+              - file: 09_serverless/event_bus/1_intro_to_event_bus.md
+          - file: 09_serverless/serverless_framework/README.md
+          - file: 09_serverless/workflow/README.md
+          - file: 09_serverless/advanced/README.md
             sections:
-              - file: 10_serverless/advanced/event_driven.md
-              - file: 10_serverless/advanced/serverless_applications.md
+              - file: 09_serverless/advanced/event_driven.md
+              - file: 09_serverless/advanced/serverless_applications.md
   - caption: 音视频
     chapters:
       - file: video/README.md
