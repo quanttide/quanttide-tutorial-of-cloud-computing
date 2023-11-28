@@ -7,7 +7,10 @@ parts:
         sections:
           - file: 01_intro/1_intro_to_cloud_computing/README.md
             sections: 
-              - file: 01_intro/1_intro_to_cloud_computing/categories.md
+              - file: 01_intro/1_intro_to_cloud_computing/1_what_is_cloud_computing.md
+              - file: 01_intro/1_intro_to_cloud_computing/2_public_and_private.md
+              - file: 01_intro/1_intro_to_cloud_computing/3_iaas_paas_and_saas.md
+              - file: 01_intro/1_intro_to_cloud_computing/4_public_iaas.md
           - file: 01_intro/2_using_cloud_services/README.md
             sections: 
               - file: 01_intro/2_using_cloud_services/1_using_cloud_services_with_console.md
