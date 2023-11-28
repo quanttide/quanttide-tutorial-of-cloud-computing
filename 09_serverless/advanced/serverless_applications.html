@@ -1,0 +1,604 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Serverless应用架构 &#8212; 量潮云计算教程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '09_serverless/advanced/serverless_applications';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="视频" href="../../video/README.html" />
+    <link rel="prev" title="事件驱动架构" href="event_driven.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">量潮云计算教程</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    量潮云计算教程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">快速入门</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_intro/README.html">快速入门</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../01_intro/1_intro_to_cloud_computing/README.html">云计算简介</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/1_intro_to_cloud_computing/1_what_is_cloud_computing.html">什么是云计算？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/1_intro_to_cloud_computing/2_public_and_private.html">公有云、私有云和混合云</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/1_intro_to_cloud_computing/3_iaas_paas_and_saas.html">IaaS、PaaS和SaaS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/1_intro_to_cloud_computing/4_public_iaas.html">IaaS公有云</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../01_intro/2_using_cloud_services/README.html">使用云服务</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/2_using_cloud_services/1_using_cloud_services_with_console.html">使用控制台操作云服务</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/2_using_cloud_services/2_using_cloud_services_with_api.html">使用API操作云服务</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/2_using_cloud_services/3_using_cloud_services_with_sdk.html">使用SDK操作云服务</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../02_virtual_machine/README.html">虚拟机</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_network/README.html">网络</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../03_network/1_domain_name/README.html">域名</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../03_network/1_domain_name/1_domain_name_registry_and_recording.html">域名注册和备案</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_network/1_domain_name/2_domain_name_resolution.html">域名解析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_network/1_domain_name/3_ssl_certificate.html">SSL证书</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_network/2_vpc/README.html">私有网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_network/3_cdn/README.html">内容分发网络</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../04_database/README.html">数据库</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../04_database/1_sql/README.html">SQL数据库</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../04_database/1_sql/1_connect_to_sql_database.html">连接到SQL数据库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_database/1_sql/2_basic_concept.html">目录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_database/1_sql/3_operation_with_sql_statements.html">目录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_database/1_sql/4_operation_with_ORM.html">目录</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../04_database/2_nosql/README.html">NoSQL数据库</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../04_database/2_nosql/1_mongodb.html">MongoDB数据库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_database/2_nosql/2_redis.html">Redis缓存数据库</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../04_database/3_message_queue/README.html">消息队列</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../05_storage/README.html">存储</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../05_storage/1_object_storage/README.html">对象存储</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../05_storage/2_file_storage/README.html">文件存储</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">云原生</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_container/README.html">容器</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../06_container/1_docker/README.html">Docker</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../06_container/1_docker/1_preparation_for_docker.html">目录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../06_container/1_docker/2_basic_operation_of_docker.html">目录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../06_container/1_docker/3_build_images_using_dockerfile.html">目录</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_container/2_kuternetes/README.html">Kuternetes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../07_application_hosting/README.html">应用程序托管</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../07_application_hosting/1_app_engine/README.html">服务端应用托管</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../07_application_hosting/2_website_hosting/README.html">静态网站应用托管</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../07_application_hosting/2_website_hosting/website_hosting_with_cos.html">静态网站托管</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Serverless</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../08_function_computing/README.html">函数计算入门</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../08_function_computing/1_intro_to_function_computing/README.html">函数计算</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../08_function_computing/1_intro_to_function_computing/1_migrate_to_function_computing.html">标准项目转换成函数计算项目</a></li>
+
+
+
+
+<li class="toctree-l3"><a class="reference internal" href="../../08_function_computing/1_intro_to_function_computing/2_components_of_function_computing.html">函数计算</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_function_computing/1_intro_to_function_computing/3_requriements_for_function_computing_programs.html">云函数的依赖</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_function_computing/1_intro_to_function_computing/4_using_other_cloud_computing_services.html">使用其他云计算资源</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../README.html">Serverless体系</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../event_bus/README.html">事件总线</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../event_bus/1_intro_to_event_bus.html">事件总线入门</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../serverless_framework/README.html">Serverless Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflow/README.html">工作流编排</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="README.html">高级</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="event_driven.html">事件驱动架构</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Serverless应用架构</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">音视频</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../video/README.html">视频</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-19"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../video/1_video_on_demand/README.html">视频点播</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../video/1_video_on_demand/1_intro_to_video_on_demand.html">视频点播服务</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/09_serverless/advanced/serverless_applications.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Serverless应用架构</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">什么是Serverless？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faas">函数计算（FaaS）</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">底层实现</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">函数编排服务</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Serverless应用框架</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="serverless">
+<h1>Serverless应用架构<a class="headerlink" href="#serverless" title="Permalink to this heading">#</a></h1>
+<section id="id1">
+<h2>什么是Serverless？<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Serverless（无服务）是相对于”有服务“的一个概念。这里的无服务是对开发者而言的，云厂商为开发者提供一套环境，开发者只需要把代码上传给云计算，云厂商即可帮助开发者完成所有部署服务的过程。从这个定义出发，广义的Serverless包括所有可以帮助开发者屏蔽部署服务过程的云服务。</p>
+<p>狭义的Serverless则主要指AWS最早提出的解决方案Lambda及其衍生品，这套方案我们也称为<strong>FaaS</strong>（Function as a Service）。顾名思义，这是以函数为单位的解决方案，开发者只需要实现一个函数，就可以让云服务帮助自己完成上线应用的后续所有事情。这个函数我们称为”事件函数“，触发事件函数的东西我们成为”触发器“。这套模型具有很强的通用性和广泛的应用场景，理论上可以让函数和函数通信，也可以让函数和外部通信，因而受到广泛的关注和重视。</p>
+<p>从软件架构的角度，我们经常把Serverless架构和微服务架构、单体服务架构比较，因为对于同样一个应用系统，单体服务使用一个服务实现；微服务则使用一群服务实现，每个服务都实现一个相对简单的功能，比如用户服务、订单服务等等。从软件架构上，Serverless可以看做细粒度更低的微服务，架构层面的业务单元不再是一个打包同一类功能的服务，而是一个函数组成的API接口。（从技术实现的角度，多个Serverless应用构成的服务依然是一个微服务；这里讨论的是抽象的软件架构问题，是从架构师的角度思考的。）细粒度更高的服务意味着更低的耦合度，这会带来更稳定的性能、更快的迭代效率，但也同时带来了更复杂的软件工程管理问题。目前已有一些初步的解决方案，比如AWS的Step Functions和阿里云的Serverless工作流（Serverless Workflow），都是很不错的解决方案。类似的方案普及以后，Serverless在很大程度上会代替微服务架构，成为下一代互联网应用的主流架构方案。</p>
+</section>
+<section id="faas">
+<h2>函数计算（FaaS）<a class="headerlink" href="#faas" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h3>底层实现<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>目前各家都是通过容器化部署函数计算环境来实现的。简而言之，在一个容器中打包这门语言所需要的运行环境（比如Python3.x），即可让这门语言的程序在容器内运行。</p>
+<p>由于各家都是follow AWS的标准，AWS没有支持Python依赖的设置，所以各家都没有支持。这让Python依赖的打包不可以在云端部署时直接进行，对于使用者造成了很大的麻烦。</p>
+<p>实际上这个问题在底层很容易解决，只需要根据Python规范，支持在根目录下设置requirements.txt，在Dockerfile中支持检查requirements.txt并运行<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code>即可。</p>
+</section>
+</section>
+<section id="id3">
+<h2>函数编排服务<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>现有的函数计算服务已经逐步标准和普及，而解决函数编排的方案还没有特别完善和普及。AWS Step Functions、阿里云的Serverless工作流（Serverless Workflow）和腾讯云的应用和服务编排工作流（Application Services Workflow，ASW）都是很好的解决方案，我们会简要介绍他们的解决思路。</p>
+<p>前面我们提到，FaaS带来了更高的细粒度的同时，也带来了更大的工程管理难题。其中最大的难题是，当我们有几十个函数，函数和函数之间有一系列复杂的依赖关系，我们如何处理呢？我们先来举一些例子作为应用场景。</p>
+<p>我们先说一些线性的步骤。爬虫服务比较简单，除去弹性资源调度（通常Serverless和云原生标准架构都内置），还需要”请求-&gt;解析-&gt;存储“这样一个相对固定的流水线。数据分析和机器学习的固定流程则通常是”数据清洗和预处理-&gt;特征提取-&gt;描述统计-&gt;模型分析-&gt;可视化“。</p>
+<p>我们再举例一些非线性的步骤。Web服务（以Django为例）比较复杂，常见的执行过程是这样的。首先是一个处理HTTP和Web框架通信的协议，在Python中是WSGI协议；进入Web框架以后，首先需要经过一系列中间件做必要的处理；然后经过视图层处理逻辑；再经过模型层和数据库通信。我们看到，中间件是所有步骤都需要用的，视图层往往也需要使用多个模型层。</p>
+<p>线性的模型实现比较简单，根据固定的应用场景可以把触发器编排好即可。而非线性的场景则比较复杂了，需要开发者自己设置依赖关系。那么，有没有一种通用的解决方案呢？</p>
+<p>函数编排服务很好地解决了这个问题。通过可视化的面板，开发者可以把函数根据自己的需要设置触发流程，既可以设置简单的线性关系，也可以设置Web服务这种复杂的非线性关系。此外，函数编排往往还和测试和运维工具整合起来，让函数流程变的更容易维护。</p>
+<p>回到上面的应用场景，我们可以把上述的一个流程单元用一个函数计算单元实现，然后根据上述的应用场景组成流程即可。</p>
+</section>
+<section id="id4">
+<h2>Serverless应用框架<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>略。这一部分主要讲一些广义的Serverless解决方案，主要是用来无服务地部署完整应用的（比如Django服务等）。</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./09_serverless/advanced"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="event_driven.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">事件驱动架构</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../video/README.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">视频</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">什么是Serverless？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faas">函数计算（FaaS）</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">底层实现</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">函数编排服务</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Serverless应用框架</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 量潮科技
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

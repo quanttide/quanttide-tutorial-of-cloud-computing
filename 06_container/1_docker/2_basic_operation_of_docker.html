@@ -1,0 +1,735 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>目录 &#8212; 量潮云计算教程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06_container/1_docker/2_basic_operation_of_docker';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="目录" href="3_build_images_using_dockerfile.html" />
+    <link rel="prev" title="目录" href="1_preparation_for_docker.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">量潮云计算教程</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    量潮云计算教程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">快速入门</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_intro/README.html">快速入门</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../01_intro/1_intro_to_cloud_computing/README.html">云计算简介</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/1_intro_to_cloud_computing/1_what_is_cloud_computing.html">什么是云计算？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/1_intro_to_cloud_computing/2_public_and_private.html">公有云、私有云和混合云</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/1_intro_to_cloud_computing/3_iaas_paas_and_saas.html">IaaS、PaaS和SaaS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/1_intro_to_cloud_computing/4_public_iaas.html">IaaS公有云</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../01_intro/2_using_cloud_services/README.html">使用云服务</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/2_using_cloud_services/1_using_cloud_services_with_console.html">使用控制台操作云服务</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/2_using_cloud_services/2_using_cloud_services_with_api.html">使用API操作云服务</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/2_using_cloud_services/3_using_cloud_services_with_sdk.html">使用SDK操作云服务</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../02_virtual_machine/README.html">虚拟机</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_network/README.html">网络</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../03_network/1_domain_name/README.html">域名</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../03_network/1_domain_name/1_domain_name_registry_and_recording.html">域名注册和备案</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_network/1_domain_name/2_domain_name_resolution.html">域名解析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_network/1_domain_name/3_ssl_certificate.html">SSL证书</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_network/2_vpc/README.html">私有网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_network/3_cdn/README.html">内容分发网络</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../04_database/README.html">数据库</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../04_database/1_sql/README.html">SQL数据库</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../04_database/1_sql/1_connect_to_sql_database.html">连接到SQL数据库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_database/1_sql/2_basic_concept.html">目录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_database/1_sql/3_operation_with_sql_statements.html">目录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_database/1_sql/4_operation_with_ORM.html">目录</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../04_database/2_nosql/README.html">NoSQL数据库</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../04_database/2_nosql/1_mongodb.html">MongoDB数据库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_database/2_nosql/2_redis.html">Redis缓存数据库</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../04_database/3_message_queue/README.html">消息队列</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../05_storage/README.html">存储</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../05_storage/1_object_storage/README.html">对象存储</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../05_storage/2_file_storage/README.html">文件存储</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">云原生</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../README.html">容器</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="README.html">Docker</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="1_preparation_for_docker.html">目录</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">目录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="3_build_images_using_dockerfile.html">目录</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../2_kuternetes/README.html">Kuternetes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../07_application_hosting/README.html">应用程序托管</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../07_application_hosting/1_app_engine/README.html">服务端应用托管</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../07_application_hosting/2_website_hosting/README.html">静态网站应用托管</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../07_application_hosting/2_website_hosting/website_hosting_with_cos.html">静态网站托管</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Serverless</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../08_function_computing/README.html">函数计算入门</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../08_function_computing/1_intro_to_function_computing/README.html">函数计算</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../08_function_computing/1_intro_to_function_computing/1_migrate_to_function_computing.html">标准项目转换成函数计算项目</a></li>
+
+
+
+
+<li class="toctree-l3"><a class="reference internal" href="../../08_function_computing/1_intro_to_function_computing/2_components_of_function_computing.html">函数计算</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_function_computing/1_intro_to_function_computing/3_requriements_for_function_computing_programs.html">云函数的依赖</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_function_computing/1_intro_to_function_computing/4_using_other_cloud_computing_services.html">使用其他云计算资源</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../09_serverless/README.html">Serverless体系</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../09_serverless/event_bus/README.html">事件总线</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../09_serverless/event_bus/1_intro_to_event_bus.html">事件总线入门</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_serverless/serverless_framework/README.html">Serverless Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_serverless/workflow/README.html">工作流编排</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../09_serverless/advanced/README.html">高级</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../09_serverless/advanced/event_driven.html">事件驱动架构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../09_serverless/advanced/serverless_applications.html">Serverless应用架构</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">音视频</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../video/README.html">视频</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-19"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../video/1_video_on_demand/README.html">视频点播</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../video/1_video_on_demand/1_intro_to_video_on_demand.html">视频点播服务</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/06_container/1_docker/2_basic_operation_of_docker.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>目录</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">镜像的生命周期</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">从制品库拉取镜像</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">命令行命令</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pycharm">pycharm操作</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coding">配置镜像源（以coding为例）</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">利用镜像生成容器</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">命令行命令</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">pycharm操作</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">用命令行制作镜像（以python安装第三方库为例）</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">将镜像推送到制品库（以coding为例）</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">其他常用命令</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>目录<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>镜像的生命周期</p></li>
+<li><p>从制品库拉取镜像</p></li>
+<li><p>利用镜像生成容器</p></li>
+<li><p>用命令行制作镜像</p></li>
+<li><p>将镜像推送到制品库</p></li>
+<li><p>其他常用命令</p></li>
+</ol>
+<section id="id2">
+<h2>镜像的生命周期<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>在了解具体操作之前，我们来看具体我们将会使用到哪些操作。</p>
+<p><img alt="img.png" src="../../_images/1_docker_life_span.png" /></p>
+<p>首先，容器是真正运行应用程序的东西，而镜像是用来创造容器的。生成镜像有三种方法：</p>
+<ul class="simple">
+<li><p>从已有的制品库拉取（pull）镜像。默认的registry为Docker Hub，当然也可以从coding的docker制品库拉取。</p></li>
+<li><p>利用脚本Dockerfile生成镜像（build）。Dockerfile文件记录了生成镜像的一些操作，比如该镜像继承哪个镜像（From），
+该镜像作者是谁（Maintainer）等等。</p></li>
+<li><p>利用.tar文件包生成镜像。有的人会将镜像打包成.tar压缩包，你只需要载入（load）就可以。</p></li>
+<li><p>利用容器生成镜像（commit）。比如镜像A是没有安装任何第三方库的，利用A生成容器a后，我们对a进行操作，
+比如想要安装pymysql去操作数据库，任务完成后我们想保留这个操作数据库的功能，这样我们用容器a生成镜像B，
+这样镜像B生成的所有容器都有操作数据库的功能了。</p></li>
+</ul>
+<p>其次，镜像生成之后，我们便可以用该镜像生成容器（run），这样我们便进入了容器内部，可以通过命令行让容器运行某个应用程序。
+也可以随时让容器停止，开始或者重启。</p>
+<p>在对容器进行不断操作的时候，我们可能想保留这样那样的一些特性，我们会不断映射成镜像A,B,C,D…这些镜像是同一类型的，
+但是功能却有差异，如何区分呢？这样我们就有了标记（tag）。当我们去docker registry拉取镜像的时候，
+我们不但要确定镜像名（如python），也要确定标记（如3.7），如果省略标记，则默认为最新（latest）</p>
+<p>最后，我们想要将镜像与他人分享协同。我们可以推送（push）到docker制品库（如Docker Hub或者Coding的docker制品库），
+或者保存为tar文件与他人分享。</p>
+</section>
+<section id="id3">
+<h2>从制品库拉取镜像<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h3>命令行命令<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="go">docker pull python          # 拉取名为python的镜像（未指明版本则默认最新版本）</span>
+<span class="go">docker pull python:3.7      # 拉取名为python，版本为3.7的镜像</span>
+</pre></div>
+</div>
+<p>从制品库拉到镜像后，我们可以通过以下命令查看本地镜像列表：</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="go">docker images</span>
+</pre></div>
+</div>
+<p>这时能看到本地镜像中已经多了python:3.7这个镜像了。</p>
+<p><img alt="img.png" src="../../_images/4_docker_images.png" /></p>
+</section>
+<section id="pycharm">
+<h3>pycharm操作<a class="headerlink" href="#pycharm" title="Permalink to this heading">#</a></h3>
+<p><img alt="img.png" src="../../_images/2_pull_images.png" /></p>
+<p>images -&gt; 右键pull images，在右侧输入你想获得的镜像名:版本名</p>
+</section>
+<section id="coding">
+<h3>配置镜像源（以coding为例）<a class="headerlink" href="#coding" title="Permalink to this heading">#</a></h3>
+<p>File -&gt; Settings -&gt; Build, Execution, Deployment -&gt; Docker -&gt; Docker registry</p>
+<p><img alt="img.png" src="../../_images/3_configure_images_source.png" /></p>
+<p>coding提供了三种制品库认证方式，个人令牌，用户名密码，项目令牌。其中个人令牌是官方推荐的，
+可以追踪不同人下载的次数等信息。但是pycharm配置只支持用户名密码一种方式，
+个人令牌的配置方法需要命令行输入，感兴趣的同学们可以自己研究。</p>
+</section>
+</section>
+<section id="id5">
+<h2>利用镜像生成容器<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<section id="id6">
+<h3>命令行命令<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="go">docker run [OPTIONS] IMAGE [COMMAND] [ARG...]</span>
+</pre></div>
+</div>
+<p>上面是利用镜像生成容器的命令格式，具体而言有以下常用选项:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="go">docker run -it python:3.7       # -it代表交互式命令窗口</span>
+<span class="go">docker run -it python:3.7 /bin/bash     # /bin/bash表示打开bash窗口</span>
+</pre></div>
+</div>
+<p>注：如果打开运行容器后<strong>没有后台进程</strong>（即没有应用程序在运行），那么容器会<strong>自动退出</strong>。因此，
+对于初学者而言，加-it是必要的，可以与bash窗口进行交互，避免容器自动退出。</p>
+</section>
+<section id="id7">
+<h3>pycharm操作<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<p><img alt="img.png" src="../../_images/5_configure_create_images.png" /></p>
+<p>点击Create Container，然后会弹出运行配置页面:</p>
+<p><img alt="img.png" src="../../_images/6_pycharm_run_configuration.png" /></p>
+<p>这个页面中，参数有以下含义：</p>
+<ul class="simple">
+<li><p>Name：指的是该配置的名字。比如我打算弄一个交互式python控制台的配置，还有一个非交互式python控制台的配置，
+那么为了区分，我可以用python_interactive和python_non_interactive两个配置去区分。
+后面我们实际使用的时候便能清晰感知。</p></li>
+<li><p>Allow parallel run：是否允许多容器并行运行。在选否的时候在当前有容器在运行的时候，如果你打算运行这个镜像，
+那么会有提示要求你停止目前正在运行的容器。</p></li>
+<li><p>Store as project file：是否生成配置文件。选择是的时候会在当前工作目录生成配置文件，你可以将此配置文件和其他人共享。</p></li>
+<li><p>Image ID or Name：指定所用的镜像。</p></li>
+<li><p>Container name：指定所生成容器的名字。如果留空则docker自动生成。</p></li>
+<li><p>Modified options：这里会有很多额外选项。常用的为Run options。<strong>比如在里面填入-it，就会生成交互式容器。</strong></p></li>
+<li><p>Before launch：指在生成容器之前需要做什么。</p></li>
+</ul>
+<p>完成配置后点击Apply，再点击Run即可生成运行的容器。</p>
+</section>
+</section>
+<section id="python">
+<h2>用命令行制作镜像（以python安装第三方库为例）<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h2>
+<p>首先进入python:3.7的容器内：</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="go">docker run --name python_interactive -it python:3.7 /bin/bash</span>
+</pre></div>
+</div>
+<p>然后就可以下载第三方包了：</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="go">pip install pandas</span>
+<span class="go">pip install scipy</span>
+</pre></div>
+</div>
+<p>完成之后，我们可以进入python控制台，看看是否安装成功：</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="go">python</span>
+</pre></div>
+</div>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="go">import pandas</span>
+</pre></div>
+</div>
+<p>如果发现不报错即为安装成功，这时退出python控制台：</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="go">exit()</span>
+</pre></div>
+</div>
+<p>然后退出bash命令行：</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="go">exit</span>
+</pre></div>
+</div>
+<p>然后我们想用这个已经安装了第三方库的容器生成镜像，使用以下命令：</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="go">docker commit python_interactive my_python:latest</span>
+</pre></div>
+</div>
+<p>即可发现我们的images列表中多了my_python这个镜像。此时my_python生成的任何容器都含有pandas, scipy这两个库了。</p>
+</section>
+<section id="id8">
+<h2>将镜像推送到制品库（以coding为例）<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<p>在Coding上对应项目先新建一个制品仓库：</p>
+<p><img alt="img.png" src="../../_images/7_initiate_docker_registry.png" /></p>
+<p>然后在制品仓库的仓库管理中，我们发现镜像列表是空的，我们点击操作指引：</p>
+<p><img alt="img.png" src="../../_images/8_docker_registry_push_configuration.png" /></p>
+<p>按顺序将其中的指令复制粘贴到命令行，运行后即可成功推送到我们coding上的Docker registry</p>
+</section>
+<section id="id9">
+<h2>其他常用命令<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="go">docker images       # 查看镜像列表</span>
+<span class="go">docker ps -a        # 查看容器列表</span>
+<span class="go">docker rmi 镜像名      # 删除镜像</span>
+<span class="go">docker rm 容器名       # 删除容器</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./06_container/1_docker"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1_preparation_for_docker.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">目录</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="3_build_images_using_dockerfile.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">目录</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">镜像的生命周期</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">从制品库拉取镜像</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">命令行命令</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pycharm">pycharm操作</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coding">配置镜像源（以coding为例）</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">利用镜像生成容器</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">命令行命令</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">pycharm操作</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">用命令行制作镜像（以python安装第三方库为例）</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">将镜像推送到制品库（以coding为例）</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">其他常用命令</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 量潮科技
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

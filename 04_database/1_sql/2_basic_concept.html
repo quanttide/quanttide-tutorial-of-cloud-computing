@@ -1,0 +1,1102 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>目录 &#8212; 量潮云计算教程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '04_database/1_sql/2_basic_concept';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="目录" href="3_operation_with_sql_statements.html" />
+    <link rel="prev" title="连接到SQL数据库" href="1_connect_to_sql_database.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">量潮云计算教程</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    量潮云计算教程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">快速入门</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_intro/README.html">快速入门</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../01_intro/1_intro_to_cloud_computing/README.html">云计算简介</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/1_intro_to_cloud_computing/1_what_is_cloud_computing.html">什么是云计算？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/1_intro_to_cloud_computing/2_public_and_private.html">公有云、私有云和混合云</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/1_intro_to_cloud_computing/3_iaas_paas_and_saas.html">IaaS、PaaS和SaaS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/1_intro_to_cloud_computing/4_public_iaas.html">IaaS公有云</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../01_intro/2_using_cloud_services/README.html">使用云服务</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/2_using_cloud_services/1_using_cloud_services_with_console.html">使用控制台操作云服务</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/2_using_cloud_services/2_using_cloud_services_with_api.html">使用API操作云服务</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../01_intro/2_using_cloud_services/3_using_cloud_services_with_sdk.html">使用SDK操作云服务</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">基础</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../02_virtual_machine/README.html">虚拟机</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_network/README.html">网络</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../03_network/1_domain_name/README.html">域名</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../03_network/1_domain_name/1_domain_name_registry_and_recording.html">域名注册和备案</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_network/1_domain_name/2_domain_name_resolution.html">域名解析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_network/1_domain_name/3_ssl_certificate.html">SSL证书</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_network/2_vpc/README.html">私有网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_network/3_cdn/README.html">内容分发网络</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../README.html">数据库</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="README.html">SQL数据库</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="1_connect_to_sql_database.html">连接到SQL数据库</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">目录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="3_operation_with_sql_statements.html">目录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="4_operation_with_ORM.html">目录</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2_nosql/README.html">NoSQL数据库</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2_nosql/1_mongodb.html">MongoDB数据库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2_nosql/2_redis.html">Redis缓存数据库</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../3_message_queue/README.html">消息队列</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../05_storage/README.html">存储</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../05_storage/1_object_storage/README.html">对象存储</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../05_storage/2_file_storage/README.html">文件存储</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">云原生</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_container/README.html">容器</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../06_container/1_docker/README.html">Docker</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../06_container/1_docker/1_preparation_for_docker.html">目录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../06_container/1_docker/2_basic_operation_of_docker.html">目录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../06_container/1_docker/3_build_images_using_dockerfile.html">目录</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_container/2_kuternetes/README.html">Kuternetes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../07_application_hosting/README.html">应用程序托管</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../07_application_hosting/1_app_engine/README.html">服务端应用托管</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../07_application_hosting/2_website_hosting/README.html">静态网站应用托管</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../07_application_hosting/2_website_hosting/website_hosting_with_cos.html">静态网站托管</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Serverless</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../08_function_computing/README.html">函数计算入门</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../08_function_computing/1_intro_to_function_computing/README.html">函数计算</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../08_function_computing/1_intro_to_function_computing/1_migrate_to_function_computing.html">标准项目转换成函数计算项目</a></li>
+
+
+
+
+<li class="toctree-l3"><a class="reference internal" href="../../08_function_computing/1_intro_to_function_computing/2_components_of_function_computing.html">函数计算</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_function_computing/1_intro_to_function_computing/3_requriements_for_function_computing_programs.html">云函数的依赖</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_function_computing/1_intro_to_function_computing/4_using_other_cloud_computing_services.html">使用其他云计算资源</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../09_serverless/README.html">Serverless体系</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../09_serverless/event_bus/README.html">事件总线</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../09_serverless/event_bus/1_intro_to_event_bus.html">事件总线入门</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_serverless/serverless_framework/README.html">Serverless Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_serverless/workflow/README.html">工作流编排</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../09_serverless/advanced/README.html">高级</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../09_serverless/advanced/event_driven.html">事件驱动架构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../09_serverless/advanced/serverless_applications.html">Serverless应用架构</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">音视频</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../video/README.html">视频</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-19"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../video/1_video_on_demand/README.html">视频点播</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../video/1_video_on_demand/1_intro_to_video_on_demand.html">视频点播服务</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/04_database/1_sql/2_basic_concept.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>目录</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">数据库基本概念</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">表</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">主键</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">外键</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mysql">数据库基本操作（MySQL）</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">创建、删除、选择数据库</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">创建数据表</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">常用数据类型</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">常用约束</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">实操案例</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">插入数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">查找数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">基本查询</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#where">使用where子句</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#order-by">使用order by子句</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">连接查询</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">更新数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update">update语句</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#delete">delete语句</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>目录<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>数据库基本概念</p></li>
+<li><p>数据库基本操作</p></li>
+</ol>
+<section id="id2">
+<h2>数据库基本概念<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h3>表<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>表头(header): 每一列的名称;</p></li>
+<li><p>列(col): 具有相同数据类型的数据的集合;</p></li>
+<li><p>行(row): 每一行用来描述某条记录的具体信息;</p></li>
+<li><p>值(value): 行的具体信息, 每个值必须与该列的数据类型相同;</p></li>
+<li><p>键(key): 键的值在当前列中具有唯一性。</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>姓名</p></th>
+<th class="head"><p>性别</p></th>
+<th class="head"><p>年龄</p></th>
+<th class="head"><p>班级号</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>小明</p></td>
+<td><p>M</p></td>
+<td><p>9</p></td>
+<td><p>201</p></td>
+</tr>
+<tr class="row-odd"><td><p>小红</p></td>
+<td><p>F</p></td>
+<td><p>8</p></td>
+<td><p>203</p></td>
+</tr>
+<tr class="row-even"><td><p>小军</p></td>
+<td><p>M</p></td>
+<td><p>8</p></td>
+<td><p>202</p></td>
+</tr>
+<tr class="row-odd"><td><p>小白</p></td>
+<td><p>F</p></td>
+<td><p>9</p></td>
+<td><p>203</p></td>
+</tr>
+</tbody>
+</table>
+<p>如表中所示：该表就是一个关系，一共有姓名、性别和年龄三个属性，一共四条数据。</p>
+</section>
+<section id="id4">
+<h3>主键<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>对于关系表，有个很重要的约束，就是任意两条记录不能重复。不能重复不是指两条记录不完全相同，而是指能够通过某个字段唯一区分出不同的记录，这个字段被称为<strong>主键</strong>。</p>
+<p>比如说我们想要找到特定的一行数据，比如上面学生小明的数据，这时我们自然而然会想到如果把主键设为小明，
+就可以通过查询“小明”找到对应的记录。但是这样一来，同名的学生就无法存储到这张关系表中。</p>
+<p>所以，选取主键的一个基本原则是：<strong>不使用任何业务相关的字段作为主键。</strong></p>
+<p>常见的可作为id字段的类型有：</p>
+<ul class="simple">
+<li><p><strong>自增整数类型</strong>：数据库会在插入数据时自动为每一条记录分配一个自增整数，这样我们就完全不用担心主键重复，也不用自己预先生成主键；</p></li>
+<li><p><strong>全局唯一GUID类型</strong>：使用一种全局唯一的字符串作为主键，类似8f55d96b-8acc-4636-8cb8-76bf8abc2f57。GUID算法通过网卡MAC地址、时间戳和随机数保证任意计算机在任意时间生成的字符串都是不同的，大部分编程语言都内置了GUID算法，可以自己预算出主键。</p></li>
+</ul>
+<p>目前，在任何大型工程级的项目中，我们都会采用GUID类型去标记某一行数据。这是因为不同的两张表自增整数类型都会一样，
+如果以后想要批量操作的话会比较困难。而使用GUID类型则不会出现这种状况。</p>
+</section>
+<section id="id5">
+<h3>外键<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>course_id</p></th>
+<th class="head"><p>班级号</p></th>
+<th class="head"><p>班级人数</p></th>
+<th class="head"><p>班主任</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>7a287948-6522-477c-a9b4-3cac38cabdf2</p></td>
+<td><p>201</p></td>
+<td><p>30</p></td>
+<td><p>李老师</p></td>
+</tr>
+<tr class="row-odd"><td><p>f41314c7-5cc8-4561-8c22-1b9c03070160</p></td>
+<td><p>202</p></td>
+<td><p>28</p></td>
+<td><p>王老师</p></td>
+</tr>
+<tr class="row-even"><td><p>7639efc7-ffe8-4d7d-895c-1afa6965b001</p></td>
+<td><p>203</p></td>
+<td><p>31</p></td>
+<td><p>孙老师</p></td>
+</tr>
+<tr class="row-odd"><td><p>c5594c91-f853-46e4-94a3-35946f13566d</p></td>
+<td><p>204</p></td>
+<td><p>29</p></td>
+<td><p>程老师</p></td>
+</tr>
+</tbody>
+</table>
+<p>现在我们引入一张新表，学生表和班级表分别记录了有关每个学生的个人信息和每个班级的详细情况。
+但是我们如果想要查小明的班主任是谁，应该怎么办呢？接下来我们引入外键的概念。</p>
+<p>由于一个班级可以有多个学生，在关系模型中，这两个表的关系可以称为“一对多”，即一个<strong>courses</strong>的记录可以对应多个<strong>students</strong>表的记录。
+为了表达这种一对多的关系，我们需要在<strong>students</strong>表中加入一列course_id，让它的值与courses表的某条记录相对应：</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>students_id</p></th>
+<th class="head"><p>姓名</p></th>
+<th class="head"><p>course_id</p></th>
+<th class="head"><p>性别</p></th>
+<th class="head"><p>年龄</p></th>
+<th class="head"><p>班级号</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>b0288ff3-c82b-44a0-8445-f94a7c71d12d</p></td>
+<td><p>小明</p></td>
+<td><p>7a287948-6522-477c-a9b4-3cac38cabdf2</p></td>
+<td><p>M</p></td>
+<td><p>20</p></td>
+<td><p>201</p></td>
+</tr>
+<tr class="row-odd"><td><p>b2e56f7e-224a-4703-aab9-fce3bb225714</p></td>
+<td><p>小红</p></td>
+<td><p>7639efc7-ffe8-4d7d-895c-1afa6965b001</p></td>
+<td><p>F</p></td>
+<td><p>21</p></td>
+<td><p>203</p></td>
+</tr>
+<tr class="row-even"><td><p>0bf3aef3-e3b1-46f7-9f08-9a305cb69c7c</p></td>
+<td><p>小军</p></td>
+<td><p>f41314c7-5cc8-4561-8c22-1b9c03070160</p></td>
+<td><p>M</p></td>
+<td><p>23</p></td>
+<td><p>202</p></td>
+</tr>
+<tr class="row-odd"><td><p>0dc861e9-dfb0-4d14-97d1-0d1fa9aa598f</p></td>
+<td><p>小白</p></td>
+<td><p>7639efc7-ffe8-4d7d-895c-1afa6965b001</p></td>
+<td><p>F</p></td>
+<td><p>20</p></td>
+<td><p>203</p></td>
+</tr>
+</tbody>
+</table>
+<p>这样，我们就可以根据course_id这个列直接定位出一个students表的记录应该对应到courses的哪条记录。</p>
+<p>例如：</p>
+<ul class="simple">
+<li><p>小明的course_id为7a287948-6522-477c-a9b4-3cac38cabdf2，因此对应的<strong>courses</strong>表的记录是id=7a287948-6522-477c-a9b4-3cac38cabdf2的201班，
+班主任为李老师。</p></li>
+</ul>
+<p>在students表中，通过course_id的字段，可以把数据与另一张表关联起来，这种列称为<strong>外键</strong>。</p>
+</section>
+</section>
+<section id="mysql">
+<h2>数据库基本操作（MySQL）<a class="headerlink" href="#mysql" title="Permalink to this heading">#</a></h2>
+<p>数据库基本操作是通过sql(structure query language)语句进行的，下面我们介绍如何用sql语句进行操作数据库。
+<strong>注意：sql语句不区分大小写</strong></p>
+<section id="id6">
+<h3>创建、删除、选择数据库<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span>create database students;       #新建students数据库
+drop database students;         #删除students数据库
+use students;                   #使用students数据库
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h3>创建数据表<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<p>创建MySQL数据表需要以下信息：</p>
+<ul class="simple">
+<li><p>表名</p></li>
+<li><p>表字段名</p></li>
+<li><p>定义每个表字段</p></li>
+</ul>
+<p>语法如下：</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="p">(</span><span class="k">column_name</span><span class="w"> </span><span class="n">column_type</span><span class="p">);</span>
+</pre></div>
+</div>
+<section id="id8">
+<h4>常用数据类型<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>数值类型（TINYINT, INTEGER, FLOAT, DOUBLE, DECIMAL）</p></li>
+<li><p>日期和时间类型（DATE, DATETIME）</p></li>
+<li><p>字符串类型（CHAR, VARCHAR, TEXT）</p></li>
+</ul>
+</section>
+<section id="id9">
+<h4>常用约束<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>unique 唯一性约束</p></li>
+<li><p>not null 非空约束</p></li>
+<li><p>primary key 主键约束</p></li>
+<li><p>foreign key 外键约束</p></li>
+<li><p>default 默认</p></li>
+<li><p>check check约束</p></li>
+</ul>
+</section>
+<section id="id10">
+<h4>实操案例<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
+<p>要求：建立前文中提到的<strong>students</strong>表和<strong>courses</strong>表。</p>
+<p>学生表：</p>
+<ul class="simple">
+<li><p>student_id：主键</p></li>
+<li><p>name：非空</p></li>
+<li><p>course_id：外键，指向<strong>courses</strong>表</p></li>
+<li><p>gender：默认男</p></li>
+<li><p>age：确保输入的都在18岁以上</p></li>
+<li><p>course_num</p></li>
+</ul>
+<p>班级表：</p>
+<ul class="simple">
+<li><p>course_id：主键</p></li>
+<li><p>course_num</p></li>
+<li><p>student_quantity：确保输入的都在不小于0</p></li>
+<li><p>teacher_in_charge：非空</p></li>
+</ul>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="o">`</span><span class="n">courses</span><span class="o">`</span><span class="p">(</span>
+<span class="w">    </span><span class="o">`</span><span class="n">course_id</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">,</span>
+<span class="w">    </span><span class="o">`</span><span class="n">course_num</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<span class="w">    </span><span class="o">`</span><span class="n">student_quantity</span><span class="o">`</span><span class="w"> </span><span class="n">tinyint</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">student_quantity</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span>
+<span class="w">    </span><span class="o">`</span><span class="n">teacher_in_charge</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span>
+<span class="p">);</span>
+
+<span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="o">`</span><span class="n">students</span><span class="o">`</span><span class="p">(</span>
+<span class="w">    </span><span class="o">`</span><span class="n">student_id</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span>
+<span class="w">    </span><span class="o">`</span><span class="n">name</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="p">,</span>
+<span class="w">    </span><span class="o">`</span><span class="n">course_id</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<span class="w">    </span><span class="o">`</span><span class="n">gender</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;M&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="o">`</span><span class="n">age</span><span class="o">`</span><span class="w"> </span><span class="n">tinyint</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">`</span><span class="n">age</span><span class="o">`</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="p">),</span>
+<span class="w">    </span><span class="o">`</span><span class="n">course_num</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<span class="w">    </span><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">course_id</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">courses</span><span class="p">(</span><span class="n">course_id</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id11">
+<h3>插入数据<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<p>语法如下：</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">field1</span><span class="p">,</span><span class="w"> </span><span class="n">field2</span><span class="p">,...</span><span class="n">fieldN</span><span class="w"> </span><span class="p">)</span>
+<span class="w">                       </span><span class="k">VALUES</span>
+<span class="w">                       </span><span class="p">(</span><span class="w"> </span><span class="n">value1</span><span class="p">,</span><span class="w"> </span><span class="n">value2</span><span class="p">,...</span><span class="n">valueN</span><span class="w"> </span><span class="p">);</span>
+</pre></div>
+</div>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>course_id</p></th>
+<th class="head"><p>班级号</p></th>
+<th class="head"><p>班级人数</p></th>
+<th class="head"><p>班主任</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>7a287948-6522-477c-a9b4-3cac38cabdf2</p></td>
+<td><p>201</p></td>
+<td><p>30</p></td>
+<td><p>李老师</p></td>
+</tr>
+<tr class="row-odd"><td><p>f41314c7-5cc8-4561-8c22-1b9c03070160</p></td>
+<td><p>202</p></td>
+<td><p>28</p></td>
+<td><p>王老师</p></td>
+</tr>
+<tr class="row-even"><td><p>7639efc7-ffe8-4d7d-895c-1afa6965b001</p></td>
+<td><p>203</p></td>
+<td><p>31</p></td>
+<td><p>孙老师</p></td>
+</tr>
+<tr class="row-odd"><td><p>c5594c91-f853-46e4-94a3-35946f13566d</p></td>
+<td><p>204</p></td>
+<td><p>29</p></td>
+<td><p>程老师</p></td>
+</tr>
+</tbody>
+</table>
+<p>下面我们依次插入courses的四条数据：</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="o">`</span><span class="n">courses</span><span class="o">`</span><span class="p">(</span>
+<span class="w">    </span><span class="o">`</span><span class="n">course_id</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">,</span>
+<span class="w">    </span><span class="o">`</span><span class="n">course_num</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<span class="w">    </span><span class="o">`</span><span class="n">student_quantity</span><span class="o">`</span><span class="w"> </span><span class="n">tinyint</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">student_quantity</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span>
+<span class="w">    </span><span class="o">`</span><span class="n">teacher_in_charge</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span>
+<span class="p">);</span>
+
+<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">courses</span><span class="w"> </span><span class="p">(</span><span class="n">course_id</span><span class="p">,</span><span class="w"> </span><span class="n">course_num</span><span class="p">,</span><span class="w"> </span><span class="n">student_quantity</span><span class="p">,</span><span class="w"> </span><span class="n">teacher_in_charge</span><span class="p">)</span>
+<span class="w">            </span><span class="k">values</span><span class="w"> </span>
+<span class="w">            </span><span class="p">(</span><span class="s1">&#39;7a287948-6522-477c-a9b4-3cac38cabdf2&#39;</span><span class="p">,</span><span class="s1">&#39;201&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="s1">&#39;李老师&#39;</span><span class="p">),</span>
+<span class="w">            </span><span class="p">(</span><span class="s1">&#39;f41314c7-5cc8-4561-8c22-1b9c03070160&#39;</span><span class="p">,</span><span class="s1">&#39;202&#39;</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="s1">&#39;王老师&#39;</span><span class="p">),</span>
+<span class="w">            </span><span class="p">(</span><span class="s1">&#39;7639efc7-ffe8-4d7d-895c-1afa6965b001&#39;</span><span class="p">,</span><span class="s1">&#39;203&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="s1">&#39;孙老师&#39;</span><span class="p">),</span>
+<span class="w">            </span><span class="p">(</span><span class="s1">&#39;c5594c91-f853-46e4-94a3-35946f13566d&#39;</span><span class="p">,</span><span class="s1">&#39;204&#39;</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="s1">&#39;程老师&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id12">
+<h3>查找数据<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<p>我们可以准备如下数据，方便我们进行查找。</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><strong>id</strong></p></th>
+<th class="head text-center"><p><strong>course_id</strong></p></th>
+<th class="head text-center"><p><strong>name</strong></p></th>
+<th class="head text-center"><p><strong>gender</strong></p></th>
+<th class="head text-center"><p><strong>score</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>小明</p></td>
+<td class="text-center"><p>M</p></td>
+<td class="text-center"><p>90</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>小红</p></td>
+<td class="text-center"><p>F</p></td>
+<td class="text-center"><p>95</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>小军</p></td>
+<td class="text-center"><p>M</p></td>
+<td class="text-center"><p>88</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>小米</p></td>
+<td class="text-center"><p>F</p></td>
+<td class="text-center"><p>73</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>5</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>小白</p></td>
+<td class="text-center"><p>F</p></td>
+<td class="text-center"><p>81</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>6</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>小兵</p></td>
+<td class="text-center"><p>M</p></td>
+<td class="text-center"><p>55</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>7</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>小林</p></td>
+<td class="text-center"><p>M</p></td>
+<td class="text-center"><p>85</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>8</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>小新</p></td>
+<td class="text-center"><p>F</p></td>
+<td class="text-center"><p>91</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>9</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>小王</p></td>
+<td class="text-center"><p>M</p></td>
+<td class="text-center"><p>89</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><strong>id</strong></p></th>
+<th class="head text-center"><p><strong>name</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>一班</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p>二班</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>三班</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p>四班</p></td>
+</tr>
+</tbody>
+</table>
+<section id="id13">
+<h4>基本查询<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h4>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span>select * from students; # 选取students表中所有的数据
+select name, gender, age from students; # 选取students表中name列，性别列和年龄列
+</pre></div>
+</div>
+</section>
+<section id="where">
+<h4>使用where子句<a class="headerlink" href="#where" title="Permalink to this heading">#</a></h4>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span># SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt; # where语句基本语法
+SELECT * FROM students WHERE score &gt;= 80; # 选择students表中分数在80以上的同学
+SELECT * FROM students WHERE score &gt;= 80 AND gender = &#39;M&#39;; # 选择students表中分数在80以上的男性同学
+SELECT * FROM students WHERE score &gt;= 80 OR gender = &#39;M&#39;; # 选择students表中分数在80以上或者男性同学（两个条件满足任意一个即可）
+SELECT * FROM students WHERE NOT course_id = 2; # 选择students表中course_id不为2的同学
+SELECT * FROM students WHERE (score &lt; 80 OR score &gt; 90) AND gender = &#39;M&#39;; # 可以使用and，or和not嵌套查询
+</pre></div>
+</div>
+</section>
+<section id="order-by">
+<h4>使用order by子句<a class="headerlink" href="#order-by" title="Permalink to this heading">#</a></h4>
+<p>简单的order by子句</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span>SELECT id, name, gender, score FROM students ORDER BY score; # 对挑选出来的数据按分数这一列排序（默认升序）
+SELECT id, name, gender, score FROM students ORDER BY score DESC; # DESC可以让数据从高到低降序排列
+SELECT id, name, gender, score FROM students ORDER BY score DESC, gender; # 表示先按score列倒序，如果有相同分数的，再按gender列排序
+</pre></div>
+</div>
+<p>如果有WHERE子句，那么ORDER BY子句要放到WHERE子句后面。</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">gender</span><span class="p">,</span><span class="w"> </span><span class="n">score</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">students</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">course_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="id14">
+<h4>连接查询<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h4>
+<p>例如，我们想要选出students表的所有学生信息，可以用一条简单的SELECT语句完成：</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">course_id</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">gender</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">students</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>但是，假设我们希望结果集同时包含所在班级的名称，上面的结果集只有course_id列，缺少对应班级的name列。</p>
+<p>现在问题来了，存放班级名称的name列存储在courses表中，只有根据students表的course_id，找到courses表对应的行，再取出name列，就可以获得班级名称。</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">course_id</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="n">course_name</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">gender</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">score</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">students</span><span class="w"> </span><span class="n">s</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">courses</span><span class="w"> </span><span class="k">c</span>
+<span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">course_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>注意INNER JOIN查询的写法是：</p>
+<ul class="simple">
+<li><p>先确定主表，仍然使用FROM &lt;表1&gt;的语法；</p></li>
+<li><p>再确定需要连接的表，使用INNER JOIN &lt;表2&gt;的语法；</p></li>
+<li><p>然后确定连接条件，使用ON &lt;条件…&gt;，这里的条件是s.course_id = <a class="reference external" href="http://c.id">c.id</a>，表示students表的course_id列与courses表的id列相同的行需要连接；</p></li>
+<li><p>可选：加上WHERE子句、ORDER BY等子句。</p></li>
+</ul>
+<p>除了inner join外，还有left join，right join和outer join，区别如下：</p>
+<ul class="simple">
+<li><p>我们把tableA看作左表，把tableB看成右表，那么INNER JOIN是选出两张表都存在的记录：</p></li>
+</ul>
+<p><img alt="img.png" src="../../_images/img.png" /></p>
+<ul class="simple">
+<li><p>LEFT OUTER JOIN是选出左表存在的记录：</p></li>
+</ul>
+<p><img alt="img.png" src="../../_images/img_2.png" /></p>
+<ul class="simple">
+<li><p>RIGHT OUTER JOIN是选出右表存在的记录：</p></li>
+</ul>
+<p><img alt="img_1.png" src="../../_images/img_3.png" /></p>
+<ul class="simple">
+<li><p>FULL OUTER JOIN则是选出左右表都存在的记录：</p></li>
+</ul>
+<p><img alt="img_2.png" src="../../_images/img_4.png" /></p>
+<p>注意：采取除inner join外其余的三种join方式均会产生很多null值，需要谨慎使用。</p>
+</section>
+</section>
+<section id="id15">
+<h3>更新数据<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<section id="update">
+<h4>update语句<a class="headerlink" href="#update" title="Permalink to this heading">#</a></h4>
+<p>update语句基本语法如下：</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span># UPDATE &lt;表名&gt; SET 字段1=值1, 字段2=值2, ... WHERE ...;
+</pre></div>
+</div>
+<p>一些例子：</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span>UPDATE students SET name=&#39;小张&#39;, score=66 WHERE id=1; # 更新一条记录
+UPDATE students SET name=&#39;小牛&#39;, score=77 WHERE id&gt;=5 AND id&lt;=7; # 更新多条记录
+UPDATE students SET score=score+10 WHERE score&lt;80; # set语句可以是表达式
+UPDATE students SET score=100 WHERE id=999; # 如果没有匹配到任何记录，UPDATE语句不会报错，也不会有任何记录被更新
+</pre></div>
+</div>
+</section>
+<section id="delete">
+<h4>delete语句<a class="headerlink" href="#delete" title="Permalink to this heading">#</a></h4>
+<p>delete语句基本语法如下：</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span># DELETE FROM &lt;表名&gt; WHERE ...;
+</pre></div>
+</div>
+<p>delete语句和update语句十分类似，下面是一些例子：</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span>DELETE FROM students WHERE id&gt;=5 AND id&lt;=7;
+DELETE FROM students WHERE id=999;
+DELETE FROM students; # 不带WHERE条件的DELETE语句会删除整个表的数据，需要小心
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./04_database/1_sql"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1_connect_to_sql_database.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">连接到SQL数据库</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="3_operation_with_sql_statements.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">目录</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">数据库基本概念</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">表</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">主键</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">外键</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mysql">数据库基本操作（MySQL）</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">创建、删除、选择数据库</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">创建数据表</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">常用数据类型</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">常用约束</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">实操案例</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">插入数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">查找数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">基本查询</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#where">使用where子句</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#order-by">使用order by子句</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">连接查询</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">更新数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update">update语句</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#delete">delete语句</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 量潮科技
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
