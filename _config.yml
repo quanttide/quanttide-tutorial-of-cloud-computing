@@ -1,10 +1,9 @@
 # QtClass Config
-name: cloud-computing-with-python
-title: 云计算教程
+name: quanttide-tutorial-of-cloud-computing
+title: 量潮云计算教程
 author: 量潮科技
-description: 以Python语言和腾讯云为例的云计算教程
 level: intermediate
-stage: dev
+stage: pre-alpha
 category: tutorial
 tags:
   - python
